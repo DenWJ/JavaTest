@@ -1,0 +1,92 @@
+All necessary programs, tools, and documentation necessary to complete this test are included in this folder.
+You may use any resources, frameworks, or code snippets you feel are appropriate.  Be prepared to answer questions about any aspect of your code at a low level.
+If you choose to use frameworks other than core Java or javax, you will be asked in-depth questions on what the framework is accomplishing for you that you were not able to accomplish using core Java.
+You may use an IDE of your choice.
+Read all instructions before beginning.
+
+1) Create a Java command line program called javatest which takes the following arguments:
+
+javatest.jar "https://www.itntrialshare.org/public/testcatalog.html" "path\to\outputfiles"
+
+2) The first argument is the location of a test html file which can be accessed without any credentials.
+
+3) The output file path is a folder which will contain output files.
+
+4) Validate the inputs, and exit the program indicating a failure exit code if they are not correct.  Inform the user with system output what the correct input parameters must be.
+
+5) Create a class called CatalogParser.  It should have a constructor which takes the URL Object and the output path as parameters.
+
+6) The CatalogParser should have a non-static method called writeAsXML which takes no arguments.
+
+7) Call the writeAsXML method.  It should connect to the server and obtain the html file.  Store two copies of the file to your output directory, one named originalYYYYMMDDHHMMSS.html and one called catalogYYYYMMDDHHMMSS.  The file catalogYYYYMMDDHHMMSS should be saved as an XML file. YYYYMMDDHHMMSS should the the time the files are created, for instance 'original20160717142525'.
+
+8) Transform the catalog XML file you have created so that it appears as follows:
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+     <study class="study-container">
+          <title>WISP-R ITN029ST: Immunosuppression Withdrawal for Pediatric Living-donor Liver Transplant Recipients
+          </title>
+          <pi>Primary Investigator: Feng</pi>
+          <description>A prospective multicenter, open-label, single-arm trial in which 20 pediatric recipients of
+               parental living-donor liver allografts undergo gradual withdrawal of immunosuppression with the goal of
+               complete withdrawal
+          </description>
+          <meshtag>Child</meshtag>
+          <meshtag>Graft Rejection</meshtag>
+          <meshtag>Female</meshtag>
+          <meshtag>Child, Preschool</meshtag>
+          <meshtag>Immunosuppression</meshtag>
+          <meshtag>Humans</meshtag>
+          <meshtag>Infant</meshtag>
+          <meshtag>Liver/physiology</meshtag>
+          <meshtag>Liver Cirrhosis</meshtag>
+          <meshtag>Liver Transplantation/methods</meshtag>
+          <meshtag>Living Donors</meshtag>
+          <meshtag>Male</meshtag>
+          <meshtag>Parents</meshtag>
+          <meshtag>Patient Selection</meshtag>
+          <meshtag>Prospective Studies</meshtag>
+          <meshtag>Severity of Illness Index</meshtag>
+          <meshtag>Treatment Outcome</meshtag>
+     </study>
+
+     ...... all studies .....
+</root>
+
+9) Create a Class called TaggedStudy which inherits from a Class named Study
+
+10) Create a List of Studies based on the contents of the testcatalog.html (or your transformed XML version).  If a Study has meshtags, it should be a TaggedStudy. If a study does not have MeshTags, it should be a study.
+
+11) Override the correct method so that a Study can be printed as follows:
+
+System.out.println(someStudy);
+
+output (do not include the word output):
+
+Title: WISP-R ITN029ST: Immunosuppression Withdrawal for Pediatric Living-donor Liver Transplant Recipients
+Primary Investigator: Feng
+Desc: A prospective multicenter, open-label, single-arm trial in which 20 pediatric recipients of parental living-donor liver allografts undergo gradual withdrawal of immunosuppression with the goal of complete withdrawal
+
+12) Override the correct method so that a TaggedStudy can be printed as follows:
+
+System.out.println(someStudy);
+
+output:
+
+Title: WISP-R ITN029ST: Immunosuppression Withdrawal for Pediatric Living-donor Liver Transplant Recipients
+Primary Investigator: Feng
+Desc: A prospective multicenter, open-label, single-arm trial in which 20 pediatric recipients of parental living-donor liver allografts undergo gradual withdrawal of immunosuppression with the goal of complete withdrawal
+Meshtags:
+     Child
+      Child, Preschool
+      Female
+      Graft Rejection
+      Humans
+      Immunosuppression
+
+13) Use the correct techniques to make it possible to sort the studies alphabetically by 'title'
+
+14) Sort the studies and iterate through them to print the output to system out.
+
+15) The tasks to be accomplished may not be listed in the most efficient order to complete the test.

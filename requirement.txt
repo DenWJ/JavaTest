@@ -1,7 +1,11 @@
-All necessary programs, tools, and documentation necessary to complete this test are included in this folder.
+Except for a JDK, all necessary programs, tools, and documentation necessary to complete this test are included in this folder.
+
 You may use any resources, frameworks, or code snippets you feel are appropriate.  Be prepared to answer questions about any aspect of your code at a low level.
+
 If you choose to use frameworks other than core Java or javax, you will be asked in-depth questions on what the framework is accomplishing for you that you were not able to accomplish using core Java.
+
 You may use an IDE of your choice.
+
 Read all instructions before beginning.
 
 1) Create a Java command line program called javatest which takes the following arguments:
